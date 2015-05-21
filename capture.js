@@ -60,9 +60,7 @@ var writeToFile = function(states) {
 
 var getAllParents = function(that) {
 	var items = that.evaluate(function () {
-        var nodes = $('[class*="search"],[name*="search"],
-                       [id*="search"],[type="search"],
-                       [placeholder*="search"],[title*="search"]').closest('form'); // bubbles up
+        var nodes = $('[class*="search"],[name*="search"],[id*="search"],[type="search"],[placeholder*="search"],[title*="search"]').closest('form'); // bubbles up
         return [].map.call(nodes, function(node) {
             return node.outerHTML;
         });
@@ -84,7 +82,7 @@ var getLinks = function() {
 // parse the URL we want to listen to
 casper.start(url, function() {
 	// inject jQuery to simplify selectors, especially for fetching parent nodes
-	this.page.injectJs('scripts/jQuery-2.1.3.min.js');
+	//this.page.injectJs('scripts/jQuery-2.1.3.min.js');
 
 	/*
 		omitted rules
